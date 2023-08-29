@@ -73,34 +73,6 @@ const storedData = getExistingDataFromLocalStorage();
 updateTableAndTotal(storedData);
 
 // Fungsi untuk mengunduh data keuangan dalam bentuk PDF
-// function unduhPDF() {
-//     const doc = new jsPDF();
-    
-//     doc.text("Laporan Data Keuangan", 10, 10);
-    
-//     const tableData = [];
-//     const tableHeaders = ["Tanggal", "Keterangan", "Nominal"];
-    
-//     storedData.forEach(data => {
-//         tableData.push([data.tanggal, data.keterangan, formatRupiah(data.nominal)]);
-//     });
-    
-//     doc.autoTable({
-//         head: [tableHeaders],
-//         body: tableData,
-//         startY: 20
-//     });
-    
-//     doc.save("Laporan_Data_Keuangan.pdf");
-// }
-
-// Tambahkan event listener pada tombol unduh PDF
-// const downloadPDFBtn = document.getElementById('download-pdf-btn');
-// downloadPDFBtn.addEventListener('click', unduhPDF);
-
-
-// script-tabel.js
-
 window.jsPDF = window.jspdf.jsPDF;
 
 document.addEventListener("DOMContentLoaded", function () {
