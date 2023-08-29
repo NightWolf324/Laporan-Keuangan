@@ -73,27 +73,67 @@ const storedData = getExistingDataFromLocalStorage();
 updateTableAndTotal(storedData);
 
 // Fungsi untuk mengunduh data keuangan dalam bentuk PDF
-function unduhPDF() {
-    const doc = new jsPDF();
+// function unduhPDF() {
+//     const doc = new jsPDF();
     
-    doc.text("Laporan Data Keuangan", 10, 10);
+//     doc.text("Laporan Data Keuangan", 10, 10);
     
-    const tableData = [];
-    const tableHeaders = ["Tanggal", "Keterangan", "Nominal"];
+//     const tableData = [];
+//     const tableHeaders = ["Tanggal", "Keterangan", "Nominal"];
     
-    storedData.forEach(data => {
-        tableData.push([data.tanggal, data.keterangan, formatRupiah(data.nominal)]);
-    });
+//     storedData.forEach(data => {
+//         tableData.push([data.tanggal, data.keterangan, formatRupiah(data.nominal)]);
+//     });
     
-    doc.autoTable({
-        head: [tableHeaders],
-        body: tableData,
-        startY: 20
-    });
+//     doc.autoTable({
+//         head: [tableHeaders],
+//         body: tableData,
+//         startY: 20
+//     });
     
-    doc.save("Laporan_Data_Keuangan.pdf");
-}
+//     doc.save("Laporan_Data_Keuangan.pdf");
+// }
 
 // Tambahkan event listener pada tombol unduh PDF
-const downloadPDFBtn = document.getElementById('download-pdf-btn');
-downloadPDFBtn.addEventListener('click', unduhPDF);
+// const downloadPDFBtn = document.getElementById('download-pdf-btn');
+// downloadPDFBtn.addEventListener('click', unduhPDF);
+
+
+// script-tabel.js
+
+window.jsPDF = window.jspdf.jsPDF;
+
+document.addEventListener("DOMContentLoaded", function () {
+    const downloadPDFButton = document.getElementById("download-pdf-btn");
+  
+    downloadPDFButton.addEventListener("click", function () {
+      // Membuat objek dokumen PDF
+      const doc = new jsPDF();
+  
+      // Mengambil elemen tabel
+      const table = document.querySelector("table");
+  
+      // Mendapatkan daftar baris dari elemen tbody tabel
+      const rows = Array.from(table.querySelector("tbody").getElementsByTagName("tr"));
+  
+      // Menginisialisasi variabel untuk mengatur posisi vertikal saat menggambar tabel di PDF
+      let verticalPosition = 15;
+  
+      // Iterasi melalui setiap baris tabel dan menambahkannya ke PDF
+      rows.forEach(function (row) {
+        const columns = row.getElementsByTagName("td");
+        let horizontalPosition = 10;
+  
+        Array.from(columns).forEach(function (column) {
+          doc.text(horizontalPosition, verticalPosition, column.innerText);
+          horizontalPosition += 60; // Menyesuaikan jarak horizontal antar kolom
+        });
+  
+        verticalPosition += 10; // Menyesuaikan jarak vertikal antar baris
+      });
+  
+      // Mengunduh dokumen PDF dengan nama "laporan_keuangan.pdf"
+      doc.save("laporan_keuangan.pdf");
+    });
+  });
+  
