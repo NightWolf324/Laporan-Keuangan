@@ -22,6 +22,11 @@ function hitungTotalNominal(data) {
 //     updateTableAndTotal(storedData); // Perbarui tampilan tabel dan total
 // }
 
+// Fungsi untuk menyimpan data ke LocalStorage
+function saveDataToLocalStorage(data) {
+    localStorage.setItem('keuangan', JSON.stringify(data));
+}
+
 function hapusData(index) {
     const storedData = getExistingDataFromLocalStorage();
     storedData.splice(index, 1);
@@ -77,35 +82,34 @@ window.jsPDF = window.jspdf.jsPDF;
 
 document.addEventListener("DOMContentLoaded", function () {
     const downloadPDFButton = document.getElementById("download-pdf-btn");
-  
+
     downloadPDFButton.addEventListener("click", function () {
-      // Membuat objek dokumen PDF
-      const doc = new jsPDF();
-  
-      // Mengambil elemen tabel
-      const table = document.querySelector("table");
-  
-      // Mendapatkan daftar baris dari elemen tbody tabel
-      const rows = Array.from(table.querySelector("tbody").getElementsByTagName("tr"));
-  
-      // Menginisialisasi variabel untuk mengatur posisi vertikal saat menggambar tabel di PDF
-      let verticalPosition = 15;
-  
-      // Iterasi melalui setiap baris tabel dan menambahkannya ke PDF
-      rows.forEach(function (row) {
-        const columns = row.getElementsByTagName("td");
-        let horizontalPosition = 10;
-  
-        Array.from(columns).forEach(function (column) {
-          doc.text(horizontalPosition, verticalPosition, column.innerText);
-          horizontalPosition += 60; // Menyesuaikan jarak horizontal antar kolom
+        // Membuat objek dokumen PDF
+        const doc = new jsPDF();
+
+        // Mengambil elemen tabel
+        const table = document.querySelector("table");
+
+        // Mendapatkan daftar baris dari elemen tbody tabel
+        const rows = Array.from(table.querySelector("tbody").getElementsByTagName("tr"));
+
+        // Menginisialisasi variabel untuk mengatur posisi vertikal saat menggambar tabel di PDF
+        let verticalPosition = 15;
+
+        // Iterasi melalui setiap baris tabel dan menambahkannya ke PDF
+        rows.forEach(function (row) {
+            const columns = row.getElementsByTagName("td");
+            let horizontalPosition = 10;
+
+            Array.from(columns).forEach(function (column) {
+                doc.text(horizontalPosition, verticalPosition, column.innerText);
+                horizontalPosition += 60; // Menyesuaikan jarak horizontal antar kolom
+            });
+
+            verticalPosition += 10; // Menyesuaikan jarak vertikal antar baris
         });
-  
-        verticalPosition += 10; // Menyesuaikan jarak vertikal antar baris
-      });
-  
-      // Mengunduh dokumen PDF dengan nama "laporan_keuangan.pdf"
-      doc.save("laporan_keuangan.pdf");
+
+        // Mengunduh dokumen PDF dengan nama "laporan_keuangan.pdf"
+        doc.save("laporan_keuangan.pdf");
     });
-  });
-  
+});
