@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Laporan Keuangan - Tabel Data</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  </head>
 
-<body>
+  <body>
+    <div class="background-container">
+        <div id="gambar"></div>
+    </div>
     <div class="container mt-5">
         <h1>Tabel Data Keuangan</h1>
-        <a href="input.html" class="btn btn-primary mb-3 mt-2">Tambah Data Keuangan</a>
-        <button id="download-pdf-btn" class="btn btn-primary mb-3 mt-2">Unduh PDF</button>
+        <button id="penjumlahan" class="btn btn-success mb-3 mt-2">
+            Pemasukan
+        </button>
+        <button id="pengurangan" class="btn btn-danger mb-3 mt-2">
+            Pengeluaran
+        </button>
+        <button id="pdf-btn" class="btn btn-primary mb-3 mt-2">Unduh PDF</button>
         <table class="table">
             <thead>
                 <tr>
@@ -28,10 +34,9 @@
                 <!-- Data akan ditambahkan menggunakan JavaScript -->
             </tbody>
         </table>
-        <script src="script-tabel.js"></script>
     </div>
 
-    <!-- <script src="script.js"></script> -->
+    <script src="script-tabel.js"></script>
 </body>
 
 </html>

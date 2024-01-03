@@ -33,3 +33,41 @@ label, input {
     display: block;
     margin-bottom: 10px;
 }
+
+.background-container {
+    position: relative;
+    height: 100vh;
+}
+
+#gambar {
+    background-image: url('background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    opacity: 0.4; /* Adjust the opacity as needed (0.0 to 1.0) */
+    /* background-attachment: fixed; Fixed background while scrolling */
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 600px;
+    /* Additional styling for your content container */
+}
+
+
+/* Additional styling to adjust content positioning */
+.content {
+    text-align: center; /* Center text within the content container */
+    /* Additional styling for your content */
+}
+
+@media print {
+    .background-container {
+        display: none; /* Hide the background container during printing */
+    }
+}
