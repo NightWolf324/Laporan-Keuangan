@@ -1,73 +1,97 @@
-/* Gaya umum */
+html,
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 /* Gaya tabel */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
+th,
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
 }
 
 /* Gaya formulir */
 form {
-    max-width: 300px;
-    margin: 0 auto;
-    text-align: left;
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: left;
 }
 
-label, input {
-    display: block;
-    margin-bottom: 10px;
+label,
+input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.made-with {
+    position: absolute;
+    bottom: 40px;
+    margin: 10px;
+    font-size: 14px;
+    color: #555; /* Warna teks sesuaikan dengan kebutuhan Anda */
 }
 
 .background-container {
-    position: relative;
-    height: 100vh;
+  background-image: url("background.png") !important;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-#gambar {
-    background-image: url('background.png');
-    background-repeat: no-repeat;
-    background-size: cover;
+.background-unduh {
     height: 100%;
-    opacity: 0.4; /* Adjust the opacity as needed (0.0 to 1.0) */
-    /* background-attachment: fixed; Fixed background while scrolling */
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
 
 .container {
-    position: absolute;
-    top: 10%;
-    bottom: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    max-width: 600px;
-    /* Additional styling for your content container */
+  /* Additional styles for your content container */
+  /* Adjust as needed */
+  /* color: #fff; Example text color on the content */
+  max-width: 800px; /* Set a maximum width for the content */
+  width: 100%;
+  padding: 20px;
 }
 
+.table {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
+}
 
-/* Additional styling to adjust content positioning */
-.content {
-    text-align: center; /* Center text within the content container */
-    /* Additional styling for your content */
+@media only screen and (max-width: 768px) {
+  .background-container {
+    background-size: 60% auto; /* 100% width, auto height for smaller screens */
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap; /* Prevent text wrapping in table cells */
+  }
 }
 
 @media print {
-    .background-container {
-        display: none; /* Hide the background container during printing */
+    table {
+        background-color: transparent !important;
     }
 }
