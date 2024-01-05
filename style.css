@@ -44,6 +44,11 @@ input {
     color: #555; /* Warna teks sesuaikan dengan kebutuhan Anda */
 }
 
+.print {
+  position: absolute;
+  bottom: -40px;
+}
+
 .background-container {
   background-image: url("background.png") !important;
   background-size: auto;
@@ -90,8 +95,9 @@ input {
   }
 }
 
+/* Add styles specific for printing */
 @media print {
-    table {
-        background-color: transparent !important;
-    }
+  #printButton, #returnButton {
+      display: none; /* Hide the buttons when printing */
+  }
 }

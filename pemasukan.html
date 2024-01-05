@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laporan Keuangan - Input Data</title>
+    <title>Laporan Keuangan - Input Pemasukan Data</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -14,20 +14,27 @@
   <body>
     <div class="background-container">
       <div class="container mt-5">
-        <h1>Input Data Keuangan</h1>
+        <h1 class="mb-4">Input Pemasukan Keuangan</h1>
         <form id="input-form">
-          <label for="tanggal">Tanggal:</label>
-          <input type="date" id="tanggal" required /><br>
+          <div class="form-group">
+            <label for="tanggal">Tanggal:</label>
+            <input type="date" class="form-control bg-transparent" id="tanggal" required />
+          </div><br>
 
-          <label for="keterangan">Keterangan:</label>
-          <input type="text" id="keterangan" required /><br>
+          <div class="form-group">
+            <label for="keterangan">Keterangan:</label>
+            <input type="text" class="form-control bg-transparent" id="keterangan" required />
+          </div><br>
 
-          <label for="nominal">Nominal:</label>
-          <input type="number" id="nominal" required /><br>
+          <div class="form-group">
+            <label for="nominal">Nominal:</label>
+            <input type="number" class="form-control bg-transparent" id="nominal" required /><br>
+          </div>
+
           <button type="submit" class="btn btn-success">Tambahkan Data</button>
         </form><br>
         <a href="index.html" class="btn btn-secondary"
-          >Kembali ke Tabel Data Keuangan</a
+          >Kembali ke Halaman Utama</a
         >
         <script src="script-input.js"></script>
       </div>

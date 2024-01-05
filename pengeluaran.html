@@ -4,31 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laporan Keuangan - Input Pengurangan</title>
+    <title>Laporan Keuangan - Input Pengeluaran Data</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 
 <body>
     <div class="background-container">
-        <div id="gambar"></div>
-    </div>
-    <div class="container mt-5">
-        <h1>Input Pengurangan Total Keuangan</h1>
-        <form id="pengurangan-form">
-            <label for="tanggal">Tanggal:</label>
-            <input type="date" id="tanggal" required><br>
-            
-            <label for="keterangan">Keterangan:</label>
-            <input type="text" id="keterangan" required><br>
-
-            <label for="nominal">Nominal Pengurangan:</label>
-            <input type="number" id="nominal" required><br>
-
-            <button type="submit" class="btn btn-danger">Kurangi Data</button>
-        </form></br>
-        <a href="index.html" class="btn btn-secondary">Kembali ke Tabel Data Keuangan</a>
-        <script src="script-pengurangan.js"></script>
+        <div class="container mt-5">
+            <h1 class="mb-4">Input Pengeluaran Keuangan</h1>
+            <form id="pengurangan-form">
+                <div class="form-group">
+                    <label for="tanggal">Tanggal:</label>
+                    <input type="date" class="form-control bg-transparent" id="tanggal" required />
+                  </div><br>
+        
+                  <div class="form-group">
+                    <label for="keterangan">Keterangan:</label>
+                    <input type="text" class="form-control bg-transparent" id="keterangan" required />
+                  </div><br>
+        
+                  <div class="form-group">
+                    <label for="nominal">Nominal:</label>
+                    <input type="number" class="form-control bg-transparent" id="nominal" required /><br>
+                  </div>
+    
+                <button type="submit" class="btn btn-danger">Kurangi Data</button>
+            </form></br>
+            <a href="index.html" class="btn btn-secondary">Kembali ke Halaman Utama</a>
+            <script src="script-pengurangan.js"></script>
+        </div>
     </div>
 </body>
 

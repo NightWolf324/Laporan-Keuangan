@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Laporan Keuangan - Tabel Data</title>
+    <title>Laporan Keuangan</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -12,7 +12,7 @@
 <body>
     <div class="background-unduh">
         <div class="container mt-5">
-            <h1>Tabel Data Keuangan</h1>
+            <h1>Laporan Keuangan</h1>
             <table class="table">
                 <thead>
                     <tr>
@@ -28,8 +28,14 @@
             
             <!-- Tulisan "Made With Night Wolf" -->
             <div class="made-with">
-               <i> Made With Night Wolf </i>
+                <i> Made With Night Wolf </i>
             </div>
+
+            <div class="d-flex justify-content-end container print">
+                <button id="printButton" class="btn btn-primary mr-2" onclick="printPage()">Print</button>
+                <button id="returnButton" class="btn btn-secondary" onclick="returnToMainPage()">Kembali ke Halaman Utama</button>
+            </div>
+
         </div>
     </div>
     <script src="script-unduh.js"></script>
